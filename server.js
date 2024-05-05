@@ -27,7 +27,9 @@ app.use(bodyParser.json());
 // Router
 app.use("/api", userRouter); 
 app.use("/api", FormRouter); 
-
+app.use("/", (req, res) => {
+  res.end("Welcome");
+});
 // Database connection
 mongoose
   .connect(process.env.MONGOURL, {
